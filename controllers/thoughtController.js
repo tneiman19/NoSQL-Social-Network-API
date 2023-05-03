@@ -1,4 +1,3 @@
-const { json } = require("express");
 const { Thought, User } = require("../models"); // Import the "Thought" and "User" models
 
 const thoughtController = {
