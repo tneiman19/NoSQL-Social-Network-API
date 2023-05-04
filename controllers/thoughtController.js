@@ -1,6 +1,17 @@
 const { Thought, User } = require("../models"); // Import the "Thought" and "User" models
 
 const thoughtController = {
+  getThoughts: async (req, res) => {
+    try {
+      const thought = await Thought.find();
+      if (thoughts.length === 0) {
+        return res.status(404).json({ message: "No thoughts found" });
+      }
+    } catch (error) {
+      res.status(500).json(err);
+    }
+  },
+
   // Function to get all thoughts
   getAllThoughts: async (req, res) => {
     try {
