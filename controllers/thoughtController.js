@@ -3,7 +3,7 @@ const { Thought, User } = require("../models"); // Import the "Thought" and "Use
 const thoughtController = {
   getThoughts: async (req, res) => {
     try {
-      const thought = await Thought.find();
+      const thoughts = await Thought.find();
       if (thoughts.length === 0) {
         return res.status(404).json({ message: "No thoughts found" });
       }
