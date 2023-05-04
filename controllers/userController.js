@@ -4,9 +4,10 @@ const userController = {
   // Get all users
   getUsers: async (req, res) => {
     try {
-      const users = await User.find({}).populate("thoughts");
+      const users = await User.find({}).populate("thoughts"); //.populate("friends");
       res.json(users);
     } catch (err) {
+      console.log(err);
       res.status(500).json(err);
     }
   },

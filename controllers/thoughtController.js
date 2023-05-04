@@ -7,6 +7,7 @@ const thoughtController = {
       if (thoughts.length === 0) {
         return res.status(404).json({ message: "No thoughts found" });
       }
+      res.status(200).json(thoughts);
     } catch (error) {
       res.status(500).json(err);
     }
