@@ -13,20 +13,6 @@ const thoughtController = {
     }
   },
 
-  // Function to get all thoughts
-  getAllThoughts: async (req, res) => {
-    try {
-      const thoughts = await Thought.find();
-      if (thoughts.length === 0) {
-        return res.status(404).json({ message: "No thoughts found" });
-      }
-      res.json(thoughts);
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  },
-
-  // Function to get a single thought by ID
   getSingleThought: async (req, res) => {
     try {
       const thought = await Thought.findOne({ _id: req.params.thoughtId }).select("-__v"); // Use the "Thought" model to find a thought by ID
@@ -38,11 +24,12 @@ const thoughtController = {
       res.status(500).json(err);
     }
   },
+
   createThought: async (req, res) => {
     try {
-      const createdThought = await Thought.create(req.body); // Use the "Thought" model to create a new thought
+      const createdThought = await Thought.create(req.body);
       await User.findOneAndUpdate(
-        // Use the "User" model to add the new thought to the user's thoughts array
+        // We are using the User model to add the new thought to the user's thoughts array
         { _id: req.body.userId },
         { $addToSet: { thoughts: createdThought._id } },
         { new: true }
