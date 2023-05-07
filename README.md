@@ -1,8 +1,6 @@
-### Rutgers-Module13 (NoSQL Social-Network-API)
+Rutgers-Module13 (NoSQL Social-Network-API)
 
-# This project is a NoSQL API that's been built for a Social Network application.
-
-## We have a `user model`, `thought Model`, and a ` reaction schema` used in the thought model.
+# This project is a NoSQL API that's been built for a Social Network application. We have a `user model`, `thought Model`, and a ` reaction schema` to use in the thought model.
 
 # Installation
 
@@ -41,6 +39,10 @@ This application can be used with the following routes to perform CRUD operation
 ### Sample Image
 
 !["Sample Image"](./assets/img/InsomniaScreenshot.png)
+
+### API Walkthrough
+
+[API Walkthrough](https://youtu.be/Rvu4ZDk9tGo)
 
 ## License
 
